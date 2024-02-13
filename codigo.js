@@ -1,21 +1,29 @@
 let digitosVerificadores = ['201012341-3', '12345-5']
-
+// function sleep(milliseconds) {
+//     var start = new Date().getTime();
+//     for (var i = 0; i < 1e7; i++) {
+//       if ((new Date().getTime() - start) > milliseconds){
+//         break;
+//       }
+//     }
+//   }
 let existente = function () {
     
     let numero = document.getElementById("digito").value;
-    numero = numero.toString()
-
+    // numero = numero.toString()
+    // console.log(numero,digito)
     for (let digito of digitosVerificadores) {
-
+        console.log(numero,digito)
         if (numero === digito) {
 
             document.getElementById("digitoInvertido").innerHTML = "el digito verificador ya está registrado"
-            
+            break;
         }
         else{
             document.getElementById("digitoInvertido").innerHTML = "el digito verificador no está registrado"
 
         }
+        // sleep(2000);
     }
 }
 
