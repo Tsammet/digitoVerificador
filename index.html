@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="codigo.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+
+    <div id="container">
+
+        <div id="contenedorDigito">
+            <form id="formDigito">
+                <h1>Digito Contenedor</h1>
+                <div class="escribir-digito">
+                    <label for="digito">Digito</label>
+                    <input type="number" class="form-group" id="digito" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="numeroVerificador()">Enviar</button>
+                <div id="digitoInvertido">...</div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
