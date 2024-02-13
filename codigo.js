@@ -1,11 +1,32 @@
-let digitoVerificador = function(){
+let digitosVerificadores = ['201012341-3', '12345-5']
+
+let existente = function () {
+    
+    let numero = document.getElementById("digito").value;
+    numero = numero.toString()
+
+    for (let digito of digitosVerificadores) {
+
+        if (numero === digito) {
+
+            document.getElementById("digitoInvertido").innerHTML = "el digito verificador ya está registrado"
+            
+        }
+        else{
+            document.getElementById("digitoInvertido").innerHTML = "el digito verificador no está registrado"
+
+        }
+    }
+}
+
+let digitoVerificador = function () {
 
     let numeroInvertido = 0;
 
     let numero = document.getElementById("digito").value
 
 
-    while(numero > 0){
+    while (numero > 0) {
 
         // sacamos el ultimo digito
         let ultimoDigito = numero % 10;
@@ -17,12 +38,12 @@ let digitoVerificador = function(){
         numero = Math.floor(numero / 10);
 
     }
-    
+
     return numeroInvertido
 }
 
-const numeroVerificador = function(){
-    
+const numeroVerificador = function () {
+
     // Aquí convertí el numero invertido en un string para poder recorrer número por número
     // también llamo la función aquí
     numeroInvertido = digitoVerificador().toString();
@@ -33,7 +54,7 @@ const numeroVerificador = function(){
     let limite = 7
 
     // RECORRO núm x num
-    for (let i = 0; i<numeroInvertido.length; i++){
+    for (let i = 0; i < numeroInvertido.length; i++) {
 
         // AQUÍ CONVIERTO CADA NÚMERO QUE ES UN STRING A UN NUMERO
         let digito = parseInt(numeroInvertido[i]);
@@ -42,20 +63,20 @@ const numeroVerificador = function(){
 
         multiplicador++;
 
-        if (multiplicador > limite){
+        if (multiplicador > limite) {
             multiplicador = 2;
         }
     }
 
 
-    
+
     modulo = suma % 11;
     resta = 11 - modulo
-    
+
     let num = document.getElementById("digito").value
 
     let numverificador = num + "-" + resta
 
-    document.getElementById("digitoInvertido").innerHTML="el digito verificador es: " + numverificador
+    document.getElementById("digitoInvertido").innerHTML = "el digito verificador es: " + numverificador
 
 }
